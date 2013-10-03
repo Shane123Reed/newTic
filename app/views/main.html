@@ -1,4 +1,4 @@
-<div id="container" onclick="playBox()">
+<!-- <div id="container" onclick="playBox()">
 	<div class="box toprow col1" id="cell_1"></div>
 	<div class="box toprow col2" id="cell_2"></div>
 	<div class="box toprow col3" id="cell_3"></div>
@@ -11,5 +11,15 @@
 	<div class="box botrow col2" id="cell_8"></div>
 	<div class="box botrow col3" id="cell_9"></div>
 </div>
+ -->
 
-    <a href="index.html"><h1>NEW GAME</h1></a>
+<div id="container">
+	<div ng-repeat="row in ticTacToe">
+		<div ng-class="{sqr:true,topLine:$parent.$index !=0, leftLine:$index !=0}" ng-repeat="cell in row" ng-click="clickSquare($parent.$index, $index)">
+			<!-- {{$parent.$index + ", " + $index}} -->
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<a href="index.html"><h1>NEW GAME</h1></a>
