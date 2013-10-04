@@ -8,9 +8,9 @@ function TicTacCtrl($scope) {
 	$scope.clickSquare = function(row, col) {
 		
 		if(playerTurn % 2 == 1)
-			event.target.innerHTML = "<img src='dotsx.png'>";
+			event.target.innerHTML = "<img src='img/dotsx.png'>";
 		else
-			event.target.innerHTML = "<img src='dots.png'>";
+			event.target.innerHTML = "<img src='img/dots.png'>";
 			
 		playerTurn++;
 	};

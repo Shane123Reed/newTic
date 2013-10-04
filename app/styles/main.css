@@ -10,8 +10,9 @@ h1 {
 
 a {
     position: relative;
-    top: 80px;
+    top: 130px;
     text-decoration: none;
+    left: 2px;
 }
 
 body {
@@ -23,16 +24,17 @@ body {
 #container {
     position: relative;
     margin: 0 auto;
-    width: 500px;
-    height: 500px;
-    top: 70px;
+    width: 350px;
+    height: 350px;
+    top: 80px;
+    left: 14px;
     }
 
-img {
+/*img {
     margin-left: 5px;
     margin-top: 5px;
     opacity: .7;
-}
+}*/
 
 @media (max-width: 890px) {
     body {
@@ -52,15 +54,22 @@ img {
     height:100px;
 }
 
+.sqr img {
+    position: relative;
+    margin: 0 auto;
+    left: 6px;
+    top: 6px;
+    opacity: .4;
+}
+
 .clearfix {
     clear:both;
 }
 
 .topLine {
-    border-top: 10px solid white;
-    opacity: .7;
+    border-top: 10px solid rgba(300, 300, 300, .5);
 }
 
 .leftLine {
-    border-left: 10px solid gray;
+    border-left: 10px solid rgba(300, 300, 300, .5);
 }
