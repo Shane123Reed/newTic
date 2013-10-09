@@ -1,9 +1,23 @@
-function TicTacCtrl($scope) {
-	$scope.ticTacToe=[['X','','O'], 
-					  ['','X',''], 
-					  ['','O','']];
+function TicTacCtrl($scope, angularFire) {
+	// function keydown(event) {
+ //  		if(event.keyCode == 78) {
+ //  		document.location.href = urlr;
+	// }
+
+
+
+	// $scope.ticTacToe=[['','',''], 
+	// 				  ['','',''], 
+	// 				  ['','','']];
 
 	var playerTurn = 1;
+
+	var database = new Firebase("https://sjrtictactoe.firebaseio.com/ticTacToe");
+	angularFire(database, $scope, "ticTacToe").then(function(){
+		$scope.ticTacToe=[['','',''], 
+					  	  ['','',''], 
+					      ['','','']];
+	});
 
 	$scope.clickSquare = function(row, col) {
 		
