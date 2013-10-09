@@ -14,9 +14,9 @@ function TicTacCtrl($scope, angularFire) {
 
 	var database = new Firebase("https://sjrtictactoe.firebaseio.com/ticTacToe");
 	angularFire(database, $scope, "ticTacToe").then(function(){
-		$scope.ticTacToe=[['','',''], 
-					  	  ['','',''], 
-					      ['','','']];
+					  	 [[{value:''}, {value:''}, {value:''}],
+					  	  [{value:''}, {value:''}, {value:''}],
+					      [{value:''}, {value:''}, {value:''}]];
 	});
 
 	$scope.clickSquare = function(row, col) {
