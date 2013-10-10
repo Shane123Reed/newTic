@@ -6,25 +6,26 @@ function TicTacCtrl($scope, angularFire) {
 
 
 
-	// $scope.ticTacToe=[['','',''], 
-	// 				  ['','',''], 
-	// 				  ['','','']];
+	$scope.ticTacToe=[[{value:''}, {value:''}, {value:''}],
+					  [{value:''}, {value:''}, {value:''}],
+					  [{value:''}, {value:''}, {value:''}]];
 
 	var playerTurn = 1;
 
 	var database = new Firebase("https://sjrtictactoe.firebaseio.com/ticTacToe");
-	angularFire(database, $scope, "ticTacToe").then(function(){
-					  	 [[{value:''}, {value:''}, {value:''}],
-					  	  [{value:''}, {value:''}, {value:''}],
-					      [{value:''}, {value:''}, {value:''}]];
+	var promise = angularFire(database, $scope, "ticTacToe");
+	promise.then(function() {
+		$scope.ticTacToe=[[{value:''}, {value:''}, {value:''}],
+				  [{value:''}, {value:''}, {value:''}],
+				  [{value:''}, {value:''}, {value:''}]];
 	});
 
 	$scope.clickSquare = function(row, col) {
 		
 		if(playerTurn % 2 == 1)
-			event.target.innerHTML = "<img src='img/dotsx.png'>";
+			this.cell.value = "X";
 		else
-			event.target.innerHTML = "<img src='img/dots.png'>";
+			this.cell.value = "O";
 			
 		playerTurn++;
 	};

@@ -15,7 +15,7 @@
 
 <div id="container" ng-mousedown="dragDiv(event)">
 	<div ng-repeat="row in ticTacToe">
-		<div ng-class="{sqr:true, topLine:$parent.$index !=0, leftLine:$index !=0}" ng-repeat="cell in row" ng-click="clickSquare($parent.$index, $index)">
+		<div ng-class="{sqr:true, topLine:$parent.$index !=0, leftLine:$index !=0}" ng-repeat="cell in row" ng-bind="cell.value" ng-click="clickSquare($parent.$index, $index)">
 		<!-- 	{{$parent.$index + ", " + $index}} -->
 		</div>
 		<div class="clearfix"></div>
