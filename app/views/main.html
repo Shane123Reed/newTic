@@ -1,22 +1,6 @@
-<!-- <div id="container" onclick="playBox()">
-	<div class="box toprow col1" id="cell_1"></div>
-	<div class="box toprow col2" id="cell_2"></div>
-	<div class="box toprow col3" id="cell_3"></div>
-
-	<div class="box midrow col1 clear" id="cell_4"></div>
-	<div class="box midrow col2" id="cell_5"></div>
-	<div class="box midrow col3" id="cell_6"></div>
-
-	<div class="box botrow col1 clear" id="cell_7"></div>
-	<div class="box botrow col2" id="cell_8"></div>
-	<div class="box botrow col3" id="cell_9"></div>
-</div>
- -->
-
 <div id="container" ng-mousedown="dragDiv(event)">
 	<div ng-repeat="row in ticTacToe">
 		<div ng-class="{sqr:true, topLine:$parent.$index !=0, leftLine:$index !=0}" ng-repeat="cell in row" ng-bind="cell.value" ng-click="clickSquare($parent.$index, $index)">
-		<!-- 	{{$parent.$index + ", " + $index}} -->
 		</div>
 		<div class="clearfix"></div>
 	</div>
